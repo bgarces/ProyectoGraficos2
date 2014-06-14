@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reporte</title>
+
+    <!-- Bootstrap -->
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../bootstrap/css/mycss.css" rel="stylesheet">
+    <link href="../bootstrap/css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <!-- Fixed navbar -->
+    <div id="menu">
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><i class="glyphicon glyphicon-pencil"></i> Reporte</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+    </div>
+
+    <!-- Begin page content -->
+      <div class="row affix-row" id="menu_lateral">
+    <div class="col-sm-3 col-md-2 affix-sidebar">
+    <div class="sidebar-nav">
+  <div class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      </button>
+      <span class="visible-xs navbar-brand">Sidebar menu</span>
+    </div>
+    <div class="navbar-collapse collapse sidebar-navbar-collapse">
+      <ul class="nav navbar-nav" id="sidenav01">
+        <li class="active">
+          <a href="#" data-toggle="collapse" data-target="#toggleDemo0" data-parent="#sidenav01" class="collapsed">
+          <h4>
+          Contenido
+          <br>
+          <small class="text-primary">Recursos y Fuentes<span class="caret"></span></small>
+          </h4>
+          </a>
+          <div class="collapse" id="toggleDemo0" style="height: 0px;">
+            <ul class="nav nav-list">
+              <li><a href="#" id="btn_recursos">Recursos</a></li>
+              <li><a href="#" id="btn_fuentes">Fuentes</a></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a href="#" data-toggle="collapse" data-target="#toggleDemo" data-parent="#sidenav01" class="collapsed">
+          <span class="glyphicon glyphicon-chevron-down"></span> Introducci&oacute;n<span class="caret pull-right"></span>
+          </a>
+          <div class="collapse" id="toggleDemo" style="height: 0px;">
+            <ul class="nav nav-list">
+              <li><a href="#" id="intro_btn1">¿Qu&eacute; es Three.js?</a></li>
+              <li><a href="#" id="intro_btn2">Instalaci&oacute;n</a></li>
+              <li><a href="#" id="intro_btn3">Configuraci&oacute;n</a></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a href="#" data-toggle="collapse" data-target="#toggleDemo2" data-parent="#sidenav01" class="collapsed">
+          <span class="glyphicon glyphicon-chevron-down"></span> Cubo <span class="caret pull-right"></span>
+          </a>
+          <div class="collapse" id="toggleDemo2" style="height: 0px;">
+            <ul class="nav nav-list">
+              <li><a href="#" id="cubo_btn1">Creaci&oacute;n</a></li>
+              <li><a href="#" id="cubo_btn2">Animaci&oacute;n</a></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a href="#" data-toggle="collapse" data-target="#toggleDemo3" data-parent="#sidenav01" class="collapsed">
+          <span class="glyphicon glyphicon-chevron-down"></span> Esfera <span class="caret pull-right"></span>
+          </a>
+          <div class="collapse" id="toggleDemo3" style="height: 0px;">
+            <ul class="nav nav-list">
+              <li><a href="#" id="esfera_btn1">Creaci&oacute;n</a></li>
+              <li><a href="#" id="esfera_btn2">Animaci&oacute;n</a></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a href="#" data-toggle="collapse" data-target="#toggleDemo4" data-parent="#sidenav01" class="collapsed">
+          <span class="glyphicon glyphicon-chevron-down"></span> Pir&aacute;mide <span class="caret pull-right"></span>
+          </a>
+          <div class="collapse" id="toggleDemo4" style="height: 0px;">
+            <ul class="nav nav-list">
+              <li><a href="#" id="piramide_btn1">Creaci&oacute;n</a></li>
+              <li><a href="#" id="piramide_btn2">Animaci&oacute;n</a></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a href="#" data-toggle="collapse" data-target="#toggleDemo5" data-parent="#sidenav01" class="collapsed">
+          <span class="glyphicon glyphicon-chevron-down"></span> Toroide <span class="caret pull-right"></span>
+          </a>
+          <div class="collapse" id="toggleDemo5" style="height: 0px;">
+            <ul class="nav nav-list">
+              <li><a href="#" id="toroide_btn1">Creaci&oacute;n</a></li>
+              <li><a href="#" id="toroide_btn2">Animaci&oacute;n</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+  </div>
+  <div class="col-sm-9 col-md-10 affix-content">
+      <div class="container" id="recursos"><!--recursos-->
+        <div class="page-header">
+          <h3><span class="glyphicon glyphicon-folder-open"></span> Recursos</h3>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="list-group">
+              <a href="http://getbootstrap.com/" class="list-group-item" target="_blank">
+                <h4 class="list-group-item-heading"><span class="text-primary">Bootstrap</span></h4>
+                <p class="list-group-item-text">Framework CSS responsive que ayuda al desarrollo
+                de aplicaciones web en lo que respecta front-end.</p>
+              </a>
+              <a href="http://threejs.org/" class="list-group-item" target="_blank">
+                <h4 class="list-group-item-heading"><span class="text-primary">Three.js</span></h4>
+                <p class="list-group-item-text">Librer&iacute;a liviana escrita en javascript para 
+                crear graficos en 3D en un navegador web.</p>
+              </a>
+              <a href="http://jquery.com/" class="list-group-item" target="_blank">
+                <h4 class="list-group-item-heading"><span class="text-primary">JQuery</span></h4>
+                <p class="list-group-item-text">Biblioteca javascript que nos permite de una manera
+                simplificada interactuar con el HTML.</p>
+              </a>
+              <a href="http://bootsnipp.com/snippets/featured" class="list-group-item" target="_blank">
+                <h4 class="list-group-item-heading"><span class="text-primary">Bootsnipp</span></h4>
+                <p class="list-group-item-text">Es una bliblioteca de componentes HTML basados
+                en Bootstrap.</p>Javascript code prettifier
+              <a href="http://google-code-prettify.googlecode.com/svn/trunk/README.html" class="list-group-item" target="_blank">
+                <h4 class="list-group-item-heading"><span class="text-primary">Javascript code prettifier</span></h4>
+                <p class="list-group-item-text">Es una bliblioteca que nos permite visualizar de una forma mas est&eacute;tica el c&oacute;digo que queremos presentar.</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container" id="fuentes"><!--fuentes-->
+        <div class="page-header">
+          <h3><span class="glyphicon glyphicon-link"></span> Fuentes</h3>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="list-group">
+              <a href="http://www.jlabstudio.com/webgl/2013/03/three-js-tutorial-1-el-retorno-del-triangulo-y-el-cuadrado/" class="list-group-item" target="_blank">
+                <h4 class="list-group-item-heading"><span class="text-primary">jlabstudio</span></h4>
+                
+              </a>
+              <a href="http://threejs.org/docs/index.html#Manual/Introduction/Creating_a_scene" class="list-group-item" target="_blank">
+                <h4 class="list-group-item-heading"><span class="text-primary">Three.js</span></h4>
+                
+              </a>
+              <a href="http://www.genbetadev.com/javascript/introduccion-a-three-js-la-libreria-3d-numero-uno-para-html5" class="list-group-item" target="_blank">
+                <h4 class="list-group-item-heading"><span class="text-primary">genbetadev</span></h4>
+              </a>
+			  
+              <a href="http://stackoverflow.com/questions/11555783/mutually-exclusive-checkbox-using-dat-gui-js-api" class="list-group-item" target="_blank">
+                <h4 class="list-group-item-heading"><span class="text-primary">stackoverflow</span></h4>
+              </a>
+			</div>
+          </div>
+        </div>
+      </div>
+      <div class="container" id="introduccion_0"> <!--Introduccion-->
+        <div class="page-header">
+          <h3><span class="glyphicon glyphicon-file"></span> ¿Qu&eacute; es Three.js?</h3>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <img src="../bootstrap/css/imgt.jpg" alt="..." class="img-thumbnail">
+          </div>
+          <div class="col-md-8 text-justify">
+            <p>Three.js como tal es una libreria hecha en javascript con el objetivo de permitir
+            al desarrollador crear objetos 3D en un navegador web especificamente.</p>
+            <p>Gracias a que es una librer&iacute;a javascript, se la puede integrar a una p&aacute;gina HTML y a la vez interactuar con sus elementos</p>
+            <p>Esta libreria usa por detr&aacute;s las funcionalidades de OpenGL, pero gracias a que Three.js es
+            una librer&iacute;a javascript con un lenguaje scripting que nos permite de manera mas sencilla el trabajo de codificaci&oacute;n y a su vez de interacci&oacute; con los objetos creados.</p>
+          </div>
+        </div>
+      </div>
+      <div class="container" id="introduccion_1"><!--Instalacion-->
+      
+        <div class="page-header">
+          <h3><span class="glyphicon glyphicon-saved"></span> Instalaci&oacute;n</h3>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <p>Para la instalci&oacute;n de Three.js es necerio descargar la librer&iacute; (Esta se encuentra en la secci&oacute;n de Recursos y Fuentes ), una vez descargada dicha librer&iacute;a se procede a acoplarla al archivo HTMl donde se va a trabajar.</p>
+            <pre  class="prettyprint">
+              <span class="pln">    </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text/javascript"</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"../src_tree/three.min.js"</span><span class="tag">&gt;&lt;/script&gt;</span>
+              </pre>
+              <p>Despu&eacute;s de agregar la librer&iacute;a al archivo HTML procedemos a crer una funci&oacute;n javascript para poder trabajar dentro de la misma y crear los objetos que necesitemos.</p>
+              <pre class="prettyprint">
+                <span class="pln"></span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text/javascript"</span><span class="pln">&gt; </span>
+                $(function () {
+                  //donde se creara la programacion
+                });
+                <span class="tag">&lt;/script&gt;</span>
+              </pre>
+          </div>
+        </div>
+      </div>
+      <div class="container" id="introduccion_2"><!--1 pasos-->
+      
+        <div class="page-header">
+          <h3><span class="glyphicon glyphicon-cog"></span> Configuraci&oacute;n</h3>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <p>Una vez instalada y adaptada con el archivo HTML en donde se va ha trabajar, procedemos
+            a crear la escena en donde ubicaremos los objetos que crearemos.</p>
+            <p>Sin olvidar que tambien crearemos la camera y el render, la camara nos permitira decidir como ve el usuario al objeto mientras que el render dibujara el objeto.</p>
+            <pre class="prettyprint">
+              function init(){
+                //se establece el tamanio del canvas
+                var canvasWidth = 300;
+                var canvasHeight = 300;
+                //se crea la escena
+                var scene_cube = new THREE.Scene();
+                //se crea la camara con su respectiva perspectiva
+                var camera = new THREE.PerspectiveCamera(45, canvasWidth / canvasHeight, 0.1, 1000);
+                // se crea el render
+                var renderer_c = new THREE.WebGLRenderer({ alpha: true });
+                renderer_c.setSize(canvasWidth, canvasHeight);
+                renderer_c.shadowMapEnabled = true;
+                // se envia los par&aacute;metros necesarios para la creaci&oacute;n de un objeto
+                creacion_cubo(scene_cube,camera,renderer_c);
+              }
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div class="container" id="cubo_1"><!--Cubo-->
+      
+        <div class="page-header">
+          <h3><span class="glyphicon glyphicon-th-list"></span> Cubo - Creaci&oacute;n</h3>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-md-4">
+            <div class="well">
+              <div id="cubo_opengl"></div>
+              <div class="caption">
+                <p class="text-center  text-primary"><strong>Imagen cubo</strong></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8 text-justify">
+            <p>Para crear un cubo con Three.js, usamos la clase CubeGeometry en donde especificamos el tama&ntilde;o. Despu&eacute;s creamos el material con el con el cual construiremos el cubo.</p>
+            <p>Una vez creados los objetos anteriores procedemos a crear nuestro contenedor donde establecemos los objectos para crear el cubo, en este caso el objeto con las dimensiones y el objeto con el material. Sin olvidar agregarlo a la escena en una respectiva ubicaci&oacute;n.</p>
+            <pre class="prettyprint">
+            // crear el cubo
+            var cubeGeometry = new THREE.CubeGeometry(4,4,4);
+            var cubeMaterial = new THREE.MeshLambertMaterial({color: 0xff0000});
+            var cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+            cube.castShadow = true;
+
+            // posicionando al cubo
+            cube.position.x=-4;
+            cube.position.y=3;
+            cube.position.z=0;
+
+            // agregando el cubo a la escena
+            scene.add(cube);
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div class="container" id="cubo_2"><!--Cubo-->
+      
+        <div class="page-header">
+          <h3><span class="glyphicon glyphicon-th-list"></span> Cubo - Animaci&oacute;n</h3>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-md-4">
+            <div class="well">
+              <div id="cubo_opengl_a"></div>
+              <div class="caption">
+                <p class="text-center  text-primary"><strong>Cubo Animado</strong></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <p>Para la animaci&oacute;n de una objecto creado en Three.js es necesario escribir dicha funcionalidad dentro de una funci&oacute;n ya que esta se repetir&aacute; varias veces.</p>
+            <p>El objecto cubo creado anteriormente nos permite acceder a los par&aacute;metros de rotaci&oacute;n de cada eje, dicho esto podemos establecer su movimiento.</p>
+            <pre class="prettyprint">
+              function render_cubo_a() {
+                // asigando ubicacion en el eje y
+                cube.rotation.y += 0.02;
+                // render usando requestAnimationFrame
+                // esta funci&oacute;n se ejecutar&aacute; varias veces
+                renderer.render(scene, camera);
+                requestAnimationFrame(render_cubo_a); 
+              }
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div class="container" id="piramide_1"><!--Piramide-->
+      
+        <div class="page-header">
+          <h3><span class="glyphicon glyphicon-th-list"></span> Pir&aacute;mide - Creaci&oacute;n</h3>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-md-4">
+            <div class="well">
+              <div id="piramide_opengl"></div>
+              <div class="caption">
+                <p class="text-center  text-primary"><strong>Imagen Pirámide</strong></p>
+
+                <p class="text-center  text-primary"><strong>Pir&aacute;mide</strong></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <p>La pir&aacute;mide fue creada con el objeto CylinderGeametry con variaciones de sus par&acute;metros para que de apariencia de pir&aacute;mide, se establece el radio de inferior y superior as&iacute; como la cantidad de "caras" que se deben graficar horizontal y verticalmente.</p>
+            <p>Para darle el color degradado como se ve en la imagen se le dio color a cada cara a travez de su propiedad vetexColor.</p>
+            <p>Luego de creado el objeto final con la funci&oacute;n Mesh, se procede a darle un lugar a trav&eacute;s de la propiedades de posici&oacute;n y se lo agrega a la escena.</p>
+            <pre class="prettyprint">
+     //Material con el que se grafica la pirámide
+      var piramideMaterial = new THREE.MeshBasicMaterial({
+        vertexColors:THREE.VertexColors,
+        side:THREE.DoubleSide
+      });
+      //Creación del cilindro con forma de pirámide
+      var piramideGeometria = new THREE.CylinderGeometry(0,18, 40, 4, 1, true);
+      //colore de cada cara de la pirámide
+      for(i = 0; i < piramideGeometria.faces.length; i++){
+        if(piramideGeometria.faces[i] instanceof THREE.Face4){
+          piramideGeometria.faces[i].vertexColors[0] = new THREE.Color(0xFF0000);
+          if((i % 2) == 0){
+            piramideGeometria.faces[i].vertexColors[1] = new THREE.Color(0x00FF00);
+            piramideGeometria.faces[i].vertexColors[2] = new THREE.Color(0x0000FF);
+          } else {
+            piramideGeometria.faces[i].vertexColors[1] = new THREE.Color(0x0000FF);
+            piramideGeometria.faces[i].vertexColors[2] = new THREE.Color(0x00FF00);
+          }
+          piramideGeometria.faces[i].vertexColors[3] = new THREE.Color(0xFF0000);
+        } else {
+          piramideGeometria.faces[i].vertexColors[0] = new THREE.Color(0xFF0000);
+          piramideGeometria.faces[i].vertexColors[1] = new THREE.Color(0x00FF00);
+          piramideGeometria.faces[i].vertexColors[2] = new THREE.Color(0x0000FF);
+        }
+      }
+      //Contenedor de la pirámide 
+      var piramide = new THREE.Mesh(piramideGeometria, piramideMaterial);
+      piramide.position.x=0;
+      piramide.position.y=4;
+      piramide.position.z=0;
+      //agrarlo a la escena
+      scene.add(piramide);
+
+
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div class="container" id="piramide_2"><!--Piramide-->
+      
+        <div class="page-header">
+          <h3><span class="glyphicon glyphicon-th-list"></span> Pir&aacute;mide - Animaci&oacute;n</h3>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-md-4">
+            <div class="well">
+              <div id="piramide_opengl_a"></div>
+              <div class="caption">
+                <p class="text-center  text-primary"><strong>Pir&aacute;mide Animada</strong></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <p>Por medio de una funci&oacute;n render en donde se actualliza la posici&oacute;n de con respecto al eje de rotaci&oacute;n que tiene cada objeto.</p>
+            <pre class="prettyprint" >
+              //función que renderiza
+              function render_piramide_a(){
+              //actualización de la posición de rotación
+                piramide.rotation.y+=0.02;
+                renderer.render(scene, camera);
+                requestAnimationFrame(render_piramide_a);
+              }
+            </pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="container" id="esfera_1"><!--Piramide-->
+      
+        <div class="page-header">
+          <h3><span class="glyphicon glyphicon-th-list"></span> Esfera - Creaci&oacute;n</h3>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-md-4">
+            <div class="well">
+              <div id="esfera_opengl"></div>
+              <div class="caption">
+                <p class="text-center  text-primary"><strong>Imagen Esfera</strong></p>
+              </div>
+            </div>
+          </div>
+           <div class="col-md-8 text-justify">
+            <p>Para crear una esfera con Three.js, usamos la clase SphereGeometry en donde especificamos el tama&ntilde;o del radio, n&uacute;mero de segmentos verticales y el n&uacute;mero de segmentos horizontales. Despu&eacute;s creamos el material con el con el cual construiremos la esfera.</p>
+            <p>Una vez creados los objetos anteriores procedemos a crear nuestro contenedor donde establecemos los objectos para crear la esfera, en este caso el objeto con las dimensiones y el objeto con el material. Sin olvidar agregarlo a la escena en una respectiva ubicaci&oacute;n.</p>
+            <pre class="prettyprint">
+	//crear la esfera
+	var sphereGeometry = new THREE.SphereGeometry(4,20,20);
+	var sphereMaterial = new THREE.MeshLambertMaterial({color: 0x7777ff});
+	var sphere = new THREE.Mesh(sphereGeometry,sphereMaterial);
+	
+	// posicionando la esfera
+	sphere.position.x=10;
+	sphere.position.y=0;
+	sphere.position.z=2;
+	sphere.castShadow=true;
+	
+	// agregar la esfera a la escena
+	scene.add(sphere);
+            </pre>
+          </div>
+        </div>
+        </div>
+      <div class="container" id="esfera_2"><!--Esfera-->
+      
+        <div class="page-header">
+          <h3><span class="glyphicon glyphicon-th-list"></span> Esfera - Animaci&oacute;n</h3>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-md-4">
+            <div class="well">
+              <div id="esfera_opengl_a"></div>
+              <div class="caption">
+                <p class="text-center  text-primary"><strong>Esfera Animada</strong></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8 text-justify">
+            <p>AL igual que el cubo es necesario escribir dicha funcionalidad dentro de una funci&oacute;n que se repetir&aacute; varias veces.</p>
+            <p>El objecto cubo creado anteriormente nos permite acceder a los parametros de posici&oacute;n para las coordenadas, dicho esto podemos establecer su movimiento mediante una funci&oacute;n seno y coseno para dar el efecto de desplazamiento.</p>
+            <p>El objecto tambi&eacute;n nos permite acceder a los par&aacute;metros de radio y escala, con esto podemos establecer el cambio es su tamaño.</p>
+            
+			<pre class="prettyprint">
+	function render_esfera() {
+	//cambio del radio de la esfera para modificar su tamaño
+	tam+=0.025;
+	sphere.geometry.radius = Math.abs(Math.sin(tam));
+	sphere.scale.x = Math.abs(Math.sin(tam));
+	sphere.scale.y = Math.abs(Math.sin(tam));
+	sphere.scale.z = Math.abs(Math.sin(tam));
+	  
+	//se modifican los valores de x,y para dar el efecto de salto y desplazamiento
+	step+=0.1;
+	sphere.position.x =0;
+	sphere.position.y =4*Math.sin(step);
+			
+	// render usando requestAnimationFrame, esta funci&oacute;n se ejecutar&aacute; varias veces
+	renderer.render(scene, camera);
+	requestAnimationFrame(render_esfera); 
+  }
+            </pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="container" id="toroide_1"><!--Toroide-->
+      
+        <div class="page-header">
+          <h3><span class="glyphicon glyphicon-th-list"></span> Toroide - Creaci&oacute;n</h3>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-md-4">
+            <div class="well">
+              <div id="toroide_opengl"></div>
+              <div class="caption">
+                <p class="text-center  text-primary"><strong>Toroide</strong></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8">
+
+            <p>El toroide fu&eacute; creado por medio de la funci&oacute;n TorusGeometry dandole los valores de los radios y diametros. La función de MeshLamberMaterial que le da una una superficie no brillante.  Y se lo agrega con la función Mesh dandole la geometria y el material. Luego se le d una posición al objeto y se lo agrega a la escena. con position y add respectivamente.</p>
+
+            <p>El toroide fue creado por medio de la clase TorusGeometry dandole los valores de los radios y diametros de la fugura y el objeto MeshLamberMaterial que le da una una superficie no brillante.  Se lo agrega a la clase conotendora (Mesh), dandole la geometria y el material. Luego se le da una posici&oactue;n al objeto y se lo agrega a la escena con "position" y "add" respectivamente.</p>
+            <pre class="prettyprint">
+                //creando el cubo
+                var geometry = new THREE.TorusGeometry( 8, 4, 20, 50 );
+                var material = new THREE.MeshLambertMaterial( { color: 0xffff00 } );
+                var torus = new THREE.Mesh( geometry, material );
+                //posicionamiento del toroide
+                torus.position.x=0;
+                torus.position.y=0;
+                torus.position.z=0;
+                //se lo agrega a la escena
+                scene.add( torus );
+              </pre>
+
+          </div>
+        </div>
+      </div>
+      <div class="container" id="toroide_2"><!--Toroide-->
+      
+        <div class="page-header">
+          <h3><span class="glyphicon glyphicon-th-list"></span> Toroide - Animaci&oacute;n</h3>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-md-4">
+            <div class="well">
+              <div id="toroide_opengl_a"></div>
+              <div class="caption">
+                <p class="text-center  text-primary"><strong>Toroide Animado</strong></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <p>La rotaci&oacute;n del toriode fue dada por la funci&oacute;n que renderiza la figura aumentando cada vez que se la llama sus propiedad de rotaci&oacute;n. El movimiento del toroide puede ser sobre su eje vertical y horizontal, y esta especificaci&oacute;n se da a trav&eacute;s de los controles en el &aacute;rea del Gui Data</p>
+            <pre class="prettyprint" >
+              function render_toroide_a(){
+              //asiganción de los calores en el eje que queremos que se mueva
+                torus.rotation.x += 0.02;
+                torus.rotation.y = 0;
+                torus.rotation.z = 0;
+                renderer.render(scene, camera);
+                requestAnimationFrame(render_toroide_a);
+              }
+            </pre>
+          </div>
+        </div>
+      </div>
+
+          </div>
+        </div>
+      
+
+    <div id="footer">
+      <div class="container">
+        <p class="myfooter text-right">Desarrollado por: Raquel Vill&oacute;n, Carlos Franco, Bryan Garc&eacute;s Murillo.</p>
+      </div>
+    </div>
+    
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../src_tree/three.min.js"></script>
+    <script src="../google-code-prettify/prettify.js"></script>
+    <script type="text/javascript">
+      $(function () {
+        prettyPrint();
+        presentacion();
+        $("#menu_lateral").hide();
+        $("#menu_lateral").show("slow");
+        init(0);
+        init(1);
+        function init(opt_animation){
+          var canvasWidth = 300;
+          var canvasHeight = 300;
+
+          var scene_cube = new THREE.Scene();
+          var scene_esfera = new THREE.Scene();
+          var scene_piramide = new THREE.Scene();
+          var scene_toroide = new THREE.Scene();
+          // create a camera, which defines where we're looking at.
+          var camera = new THREE.PerspectiveCamera(45, canvasWidth / canvasHeight, 0.1, 1000);
+
+          // create a render and set the size
+          var renderer_c = new THREE.WebGLRenderer({ alpha: true });
+          renderer_c.setSize(canvasWidth, canvasHeight);
+          renderer_c.shadowMapEnabled = true;
+
+          var renderer_e = new THREE.WebGLRenderer({ alpha: true });
+          renderer_e.setSize(canvasWidth, canvasHeight);
+          renderer_e.shadowMapEnabled = true;
+
+          var renderer_p = new THREE.WebGLRenderer({ alpha: true });
+          renderer_p.setSize(canvasWidth, canvasHeight);
+          renderer_p.shadowMapEnabled = true;
+
+          var renderer_t = new THREE.WebGLRenderer({ alpha: true });
+          renderer_t.setSize(canvasWidth, canvasHeight);
+          renderer_t.shadowMapEnabled = true;
+
+          creacion_cubo(scene_cube,camera,renderer_c,opt_animation);
+          creacion_esfera(scene_esfera,camera,renderer_e,opt_animation);
+          creacion_piramide(scene_piramide,camera,renderer_p,opt_animation);
+          creacion_toroide(scene_toroide,camera,renderer_t,opt_animation);
+        }
+        function creacion_cubo(scene,camera,renderer,opt_animation){
+          // create a cube
+          var cubeGeometry = new THREE.CubeGeometry(15,15,15);
+          var cubeMaterial = new THREE.MeshLambertMaterial({color: 0xff0000});
+          var cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+          cube.castShadow = true;
+
+          // position the cube
+          cube.position.x=-4;
+          cube.position.y=3;
+          cube.position.z=0;
+
+          // add the cube to the scene
+          scene.add(cube);
+
+          // position and point the camera to the center of the scene
+          camera.position.x = -30;
+          camera.position.y = 40;
+          camera.position.z = 30;
+          camera.lookAt(scene.position);
+
+          // add subtle ambient lighting
+          var ambientLight = new THREE.AmbientLight(0x0c0c0c);
+          scene.add(ambientLight);
+
+          // add spotlight for the shadows
+          var spotLight = new THREE.SpotLight( 0xffffff );
+          spotLight.position.set( -40, 60, -10 );
+          spotLight.castShadow = true;
+          scene.add( spotLight );
+
+          // add the output of the renderer to the html element
+          if (opt_animation==0) {
+            $("#cubo_opengl").append(renderer.domElement);
+            render_cubo();
+          };
+          if (opt_animation==1) {
+            $("#cubo_opengl_a").append(renderer.domElement);
+            render_cubo_a();
+          };
+
+          // call the render function
+          
+          function render_cubo_a() {
+              // render using requestAnimationFrame
+            cube.rotation.y += 0.02;
+              // render using requestAnimationFrame
+            renderer.render(scene, camera);
+
+            requestAnimationFrame(render_cubo_a); 
+          }
+          function render_cubo() {
+            renderer.render(scene, camera);
+          }
+        }
+        function creacion_esfera(scene,camera,renderer,opt_animation){
+          var sphereGeometry = new THREE.SphereGeometry(16,80,80);
+          var sphereMaterial = new THREE.MeshLambertMaterial({color: 0x7777ff});
+          var sphere = new THREE.Mesh(sphereGeometry,sphereMaterial);
+
+          // position the sphere
+          sphere.position.x=-2;
+          sphere.position.y=0;
+          sphere.position.z=0;
+          sphere.castShadow=true;
+
+          // position and point the camera to the center of the scene
+          camera.position.x = -30;
+          camera.position.y = 40;
+          camera.position.z = 30;
+          camera.lookAt(scene.position);
+
+          // add subtle ambient lighting
+          var ambientLight = new THREE.AmbientLight(0x0c0c0c);
+          scene.add(ambientLight);
+
+          // add spotlight for the shadows
+          var spotLight = new THREE.SpotLight( 0xffffff );
+          spotLight.position.set( -40, 60, -10 );
+          spotLight.castShadow = true;
+          scene.add( spotLight );
+
+          // add the sphere to the scene
+          var step=0;
+		  var tam=0;
+          scene.add(sphere);
+
+          if (opt_animation==0) {
+            $("#esfera_opengl").append(renderer.domElement);
+            render_esfera();
+          };
+          if (opt_animation==1) {
+            $("#esfera_opengl_a").append(renderer.domElement);
+            render_esfera_a();
+          };
+          function render_esfera_a(){
+            step+=0.1;
+			tam+=0.025;
+			
+			sphere.geometry.radius = Math.abs(Math.sin(tam));
+			sphere.scale.x = Math.abs(Math.sin(tam));
+			sphere.scale.y = Math.abs(Math.sin(tam));
+			sphere.scale.z = Math.abs(Math.sin(tam));
+	
+            sphere.position.x =0;
+            sphere.position.y =4*Math.sin(step);
+            renderer.render(scene, camera);
+            requestAnimationFrame(render_esfera_a);
+          }
+          function render_esfera(){
+            renderer.render(scene, camera);
+          }
+        }
+        function creacion_piramide(scene,camera,renderer,opt_animation){
+          //Pirámide
+          var piramideMaterial = new THREE.MeshBasicMaterial({
+            vertexColors:THREE.VertexColors,
+            side:THREE.DoubleSide
+          });
+          var piramideGeometria = new THREE.CylinderGeometry(0,18, 40, 4, 1, true);
+          for(i = 0; i < piramideGeometria.faces.length; i++){
+            if(piramideGeometria.faces[i] instanceof THREE.Face4){
+              piramideGeometria.faces[i].vertexColors[0] = new THREE.Color(0xFF0000);
+              if((i % 2) == 0){
+                piramideGeometria.faces[i].vertexColors[1] = new THREE.Color(0x00FF00);
+                piramideGeometria.faces[i].vertexColors[2] = new THREE.Color(0x0000FF);
+              } else {
+                piramideGeometria.faces[i].vertexColors[1] = new THREE.Color(0x0000FF);
+                piramideGeometria.faces[i].vertexColors[2] = new THREE.Color(0x00FF00);
+              }
+              piramideGeometria.faces[i].vertexColors[3] = new THREE.Color(0xFF0000);
+            } else {
+              piramideGeometria.faces[i].vertexColors[0] = new THREE.Color(0xFF0000);
+              piramideGeometria.faces[i].vertexColors[1] = new THREE.Color(0x00FF00);
+              piramideGeometria.faces[i].vertexColors[2] = new THREE.Color(0x0000FF);
+            }
+          }
+
+          var piramide = new THREE.Mesh(piramideGeometria, piramideMaterial);
+          piramide.position.x=0;
+          piramide.position.y=4;
+          piramide.position.z=0;
+          scene.add(piramide);
+
+
+              // position and point the camera to the center of the scene
+              camera.position.x = -30;
+              camera.position.y = 40;
+              camera.position.z = 30;
+              camera.lookAt(scene.position);
+
+              // add subtle ambient lighting
+              var ambientLight = new THREE.AmbientLight(0x0c0c0c);
+              scene.add(ambientLight);
+
+              // add spotlight for the shadows
+              var spotLight = new THREE.SpotLight( 0xffffff );
+              spotLight.position.set( -40, 60, -10 );
+              spotLight.castShadow = true;
+              scene.add( spotLight );
+
+              if (opt_animation==0) {
+              $("#piramide_opengl").append(renderer.domElement);
+                  render_piramide();
+                };
+              if (opt_animation==1) {
+                $("#piramide_opengl_a").append(renderer.domElement);
+                render_piramide_a();
+              };
+              function render_piramide_a(){
+                piramide.rotation.y+=0.02;
+                renderer.render(scene, camera);
+                requestAnimationFrame(render_piramide_a);
+              }
+              function render_piramide(){
+                renderer.render(scene, camera);
+              }
+        }
+        function creacion_toroide(scene,camera,renderer,opt_animation){
+          var geometry = new THREE.TorusGeometry( 8, 4, 20, 50 );
+          var material = new THREE.MeshLambertMaterial( { color: 0xffff00 } );
+          var torus = new THREE.Mesh( geometry, material );
+          //torus.rotation.x=-0.55*Math.PI;
+          torus.position.x=0;
+          torus.position.y=0;
+          torus.position.z=0;
+          //torus.castShadow=true;
+          scene.add( torus );
+
+          // position and point the camera to the center of the scene
+              camera.position.x = -30;
+              camera.position.y = 40;
+              camera.position.z = 30;
+              camera.lookAt(scene.position);
+
+              // add subtle ambient lighting
+              var ambientLight = new THREE.AmbientLight(0x0c0c0c);
+              scene.add(ambientLight);
+
+              // add spotlight for the shadows
+              var spotLight = new THREE.SpotLight( 0xffffff );
+              spotLight.position.set( -40, 60, -10 );
+              spotLight.castShadow = true;
+              scene.add( spotLight );
+
+              if (opt_animation==0) {
+              $("#toroide_opengl").append(renderer.domElement);
+                  render_toroide();
+                };
+              if (opt_animation==1) {
+                $("#toroide_opengl_a").append(renderer.domElement);
+                render_toroide_a();
+              };
+              function render_toroide_a(){
+                torus.rotation.x += 0.02;
+                torus.rotation.y = 0;
+                torus.rotation.z = 0;
+                renderer.render(scene, camera);
+                requestAnimationFrame(render_toroide_a);
+              }
+              function render_toroide(){
+                renderer.render(scene, camera);
+              }
+        }
+        
+        function ocultar_pages(opt){
+          if (opt==1) {//intro
+            ocultar_cubo();
+            ocultar_piramide();
+            ocultar_esfera();
+            ocultar_toroide();
+            ocultar_recursos();
+          };
+          if (opt==2) {//cubo
+            ocultar_intro();
+            ocultar_piramide();
+            ocultar_esfera();
+            ocultar_toroide();
+            ocultar_recursos();
+          };
+          if (opt==3) {//piramide
+            ocultar_intro();
+            ocultar_cubo();
+            ocultar_esfera();
+            ocultar_toroide();
+            ocultar_recursos();
+          };
+          if (opt==4) {//esfera
+            ocultar_intro();
+            ocultar_cubo();
+            ocultar_piramide();
+            ocultar_toroide();
+            ocultar_recursos();
+          };
+          if (opt==5) {//toroide
+            ocultar_intro();
+            ocultar_cubo();
+            ocultar_piramide();
+            ocultar_esfera();
+            ocultar_recursos();
+          };
+          if (opt==6) {//recursos
+            ocultar_intro();
+            ocultar_cubo();
+            ocultar_piramide();
+            ocultar_esfera();
+            ocultar_toroide();
+          };
+        }
+        function ocultar_intro(){
+          $("#introduccion_0").hide();
+          $("#introduccion_1").hide();
+          $("#introduccion_2").hide();
+        }
+        function ocultar_cubo(){
+          $("#cubo_1").hide();
+          $("#cubo_2").hide();
+        }
+        function ocultar_esfera(){
+          $("#esfera_1").hide();
+          $("#esfera_2").hide();
+        }
+        function ocultar_recursos(){
+          $("#recursos").hide();
+          $("#fuentes").hide();
+        }
+        function ocultar_piramide(){
+          $("#piramide_1").hide();
+          $("#piramide_2").hide();
+        }
+        function ocultar_toroide(){
+          $("#toroide_1").hide();
+          $("#toroide_2").hide();
+        }
+        function presentacion(){
+          //$("#introduccion_0").hide();
+          ocultar_intro();
+          ocultar_cubo();
+          ocultar_piramide();
+          ocultar_esfera();
+          ocultar_toroide();
+          ocultar_recursos();
+          $("#introduccion_0").show("slow");
+          $( "#intro_btn1" ).click(function() {
+            $("#introduccion_0").show("slow");
+            $("#introduccion_1").hide();
+            $("#introduccion_2").hide();
+            ocultar_pages(1);
+          });
+          $( "#intro_btn2" ).click(function() {
+            $("#introduccion_1").show("slow");
+            $("#introduccion_0").hide();
+            $("#introduccion_2").hide();
+            ocultar_pages(1);
+          });
+          $( "#intro_btn3" ).click(function() {
+            $("#introduccion_2").show("slow");
+            $("#introduccion_0").hide();
+            $("#introduccion_1").hide();
+            ocultar_pages(1);
+          });
+
+          $( "#cubo_btn1" ).click(function() {
+            $("#cubo_1").show("slow");
+            $("#cubo_2").hide();
+            ocultar_pages(2);
+          });
+          $( "#cubo_btn2" ).click(function() {
+            $("#cubo_2").show("slow");
+            $("#cubo_1").hide();
+            ocultar_pages(2);
+          });
+
+          $( "#piramide_btn1" ).click(function() {
+            $("#piramide_1").show("slow");
+            $("#piramide_2").hide();
+            ocultar_pages(3);
+          });
+          $( "#piramide_btn2" ).click(function() {
+            $("#piramide_2").show("slow");
+            $("#piramide_1").hide();
+            ocultar_pages(3);
+          });
+
+          $( "#esfera_btn1" ).click(function() {
+            $("#esfera_1").show("slow");
+            $("#esfera_2").hide();
+            ocultar_pages(4);
+          });
+          $( "#esfera_btn2" ).click(function() {
+            $("#esfera_2").show("slow");
+            $("#esfera_1").hide();
+            ocultar_pages(4);
+          });
+
+          $( "#toroide_btn1" ).click(function() {
+            $("#toroide_1").show("slow");
+            $("#toroide_2").hide();
+            ocultar_pages(5);
+          });
+          $( "#toroide_btn2" ).click(function() {
+            $("#toroide_2").show("slow");
+            $("#toroide_1").hide();
+            ocultar_pages(5);
+          });
+
+          $( "#btn_recursos" ).click(function() {
+            $("#recursos").show("slow");
+            $("#fuentes").hide();
+            ocultar_pages(6);
+          });
+          $( "#btn_fuentes" ).click(function() {
+            $("#fuentes").show("slow");
+            $("#recursos").hide();
+            ocultar_pages(6);
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
