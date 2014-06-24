@@ -51,7 +51,6 @@
     <script src="build_stats/stats.min.js"></script>
     <script src="build_stats/webgl-utils.js"></script>
     <script src="build_stats/glMatrix-0.9.5.min.js"></script>
-    <script src="src_tree/OrbitControls.js"></script>
     <!-- Javascript code that runs our Three.js examples -->
 <script type="text/javascript">
      $(function () {
@@ -142,11 +141,13 @@
         var tetera;
           loader.load( "data/Teapot.js", function(geometry){
             var material = new THREE.MeshLambertMaterial({color: 0x55B663});
+            material.shading = THREE.FlatShading;
             tetera = new THREE.Mesh(geometry, material);
+
             
         });
         loader.onLoadComplete=function(){
-            tetera.scale.set(3, 3, 3 );
+            tetera.scale.set(5, 5, 5 );
             tetera.position.x=0;
             tetera.position.y=0;
             tetera.position.z=0;
