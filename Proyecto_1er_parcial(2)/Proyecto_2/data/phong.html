@@ -23,6 +23,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../build_stats/dat.gui.js"></script>
+    <script src="../build_stats/stats.min.js"></script>
     <script src="../src_tree/three.min.js"></script>
     <script type="text/javascript">
       $(function () {
@@ -30,6 +32,7 @@
       });
       //funcion del phong shading
       function init_phong(){
+        var stats = initStats();
             // create a scene, that will hold all our elements such as objects, cameras and lights.
             var scene = new THREE.Scene();
 
@@ -163,6 +166,21 @@
             var stepesphera=0.018;
             var steptoroide=0.015;
             var steppiramide=0.010;
+            //controles de la gui para las luces
+            var controls = new function() {
+                this.light1 = true;
+                this.light2 = true;
+                this.light3 = true;
+                this.light4 = true;
+            }
+
+            var gui = new DAT.GUI();
+            gui.add(controls,'light1');
+            gui.add(controls,'light2');
+            gui.add(controls,'light3');
+            gui.add(controls,'light4');
+
+
             render();
             function render_tetera() {
 
@@ -197,13 +215,34 @@
                 piramide.position.x=(50*(Math.cos(steppiramide))*1);
                 piramide.position.z=(50*(Math.sin(steppiramide))*1);
                 piramide.rotation.y+=0.03;
+                //encendido y apagado de las luces segun se escoja
+                if (!controls.light1) {scene.remove(spotLight1);} else{scene.add(spotLight1)};
+                if (!controls.light2) {scene.remove(spotLight2);} else{scene.add(spotLight2)};
+                if (!controls.light3) {scene.remove(spotLight3);} else{scene.add(spotLight3)};
+                if (!controls.light4) {scene.remove(spotLight4);} else{scene.add(spotLight4); };
+
 
                 //llamada al render
                 requestAnimationFrame(render);
                 //graficación con las nuevas posiciones
                 renderer.render(scene, camera);
-                renderer.render(scene, camera);
             }
+            function initStats() {
+
+            var stats = new Stats();
+
+            stats.setMode(0); // 0: fps, 1: ms
+
+            // Align top-left
+            stats.domElement.style.position = 'relative';
+            stats.domElement.style.left = '0px';
+            stats.domElement.style.top = '0px';
+
+            $("#stats").append( stats.domElement );
+
+            return stats;
+        }
+
 
     }
     </script>
