@@ -89,7 +89,7 @@
           <div class="collapse" id="toggleDemo2" style="height: 0px;">
             <ul class="nav nav-list">
               <li><a href="#" id="cubo_btn1">Creaci&oacute;n</a></li>
-              <li><a href="#" id="cubo_btn2">Animaci&oacute;n</a></li>
+             <!--<li><a href="#" id="cubo_btn2">Animaci&oacute;n</a></li>-->
             </ul>
           </div>
         </li>
@@ -100,7 +100,7 @@
           <div class="collapse" id="toggleDemo3" style="height: 0px;">
             <ul class="nav nav-list">
               <li><a href="#" id="esfera_btn1">Creaci&oacute;n</a></li>
-              <li><a href="#" id="esfera_btn2">Animaci&oacute;n</a></li>
+              <!--<li><a href="#" id="esfera_btn2">Animaci&oacute;n</a></li>-->
             </ul>
           </div>
         </li>
@@ -111,7 +111,7 @@
           <div class="collapse" id="toggleDemo4" style="height: 0px;">
             <ul class="nav nav-list">
               <li><a href="#" id="piramide_btn1">Creaci&oacute;n</a></li>
-              <li><a href="#" id="piramide_btn2">Animaci&oacute;n</a></li>
+              <!--<li><a href="#" id="piramide_btn2">Animaci&oacute;n</a></li>-->
             </ul>
           </div>
         </li>
@@ -122,7 +122,29 @@
           <div class="collapse" id="toggleDemo5" style="height: 0px;">
             <ul class="nav nav-list">
               <li><a href="#" id="toroide_btn1">Creaci&oacute;n</a></li>
-              <li><a href="#" id="toroide_btn2">Animaci&oacute;n</a></li>
+             <!-- <li><a href="#" id="toroide_btn2">Animaci&oacute;n</a></li>-->
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a href="#" data-toggle="collapse" data-target="#toggleDemo6" data-parent="#sidenav01" class="collapsed">
+          <span class="glyphicon glyphicon-chevron-down"></span> Movimiento de Figuras <span class="caret pull-right"></span>
+          </a>
+          <div class="collapse" id="toggleDemo6" style="height: 0px;">
+            <ul class="nav nav-list">
+              <li><a href="#" id="movimiento_btn1">Traslaci&oacute;n</a></li>
+              <li><a href="#" id="movimiento_btn2">Rotaci&oacute;n</a></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a href="#" data-toggle="collapse" data-target="#toggleDemo7" data-parent="#sidenav01" class="collapsed">
+          <span class="glyphicon glyphicon-chevron-down"></span> Luces de la Scena <span class="caret pull-right"></span>
+          </a>
+          <div class="collapse" id="toggleDemo7" style="height: 0px;">
+            <ul class="nav nav-list">
+              <li><a href="#" id="luces_btn1">Luces</a></li>
+              <li><a href="#" id="luces_btn2">Encendido y Apagado</a></li>
             </ul>
           </div>
         </li>
@@ -556,6 +578,159 @@
         </div>
       </div>
 
+      <div class="container" id="mov_1"><!--Toroide-->
+      
+        <div class="page-header">
+          <h3><span class="glyphicon glyphicon-th-list"></span> Movimiento de Traslaci&oacute;n</h3>
+        </div>
+        <div class="row">
+          
+          <div class="col-md-12">
+            <p>La Traslaci&oacute;n es el movimiento que realizan las figuras alrededor de la tetera. Todas las figuras describen un movimiento circular a diferentes velocidades y en la misma direcci&oacute;n.</p>
+            <p>La velocidad est&aacute; dada por un factor que define un &aacute;ngulo que es con el que las posiciones se van a actualizar.<br> Luego es multiplicado por un factor num&eacute;rico que especifica el radio del c&iacute;rculo que describe cada figura</p>
+            <pre class="prettyprint" >
+              var stepcube=0.02;
+              var stepesphera=0.018;
+              var steptoroide=0.015;
+              var steppiramide=0.010;
+
+              function render(){
+              //moviemiento circular del cubo
+                stepcube+=0.02; //angulo y razón con el que se desplaza 
+                cube.position.x = ( 20*(Math.cos(stepcube)));
+                cube.position.z = ( 20*(Math.sin(stepcube)));
+              //moviemiento circular de la esfera
+                stepesphera+=0.019;
+                sphere.position.x=(30*(Math.cos(stepesphera))*1);
+                sphere.position.z=(30*(Math.sin(stepesphera))*1);
+
+              //moviemiento circular del toroide
+                steptoroide+=0.018;
+                toroide.position.x=(40*(Math.cos(steptoroide))*1);
+                toroide.position.z=(40*(Math.sin(steptoroide))*1);
+
+              //moviemiento circular de la pirámide
+                steppiramide+=0.017;
+                piramide.position.x=(50*(Math.cos(steppiramide))*1);
+                piramide.position.z=(50*(Math.sin(steppiramide))*1);
+              }
+            </pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="container" id="mov_2"><!--Toroide-->
+      
+        <div class="page-header">
+          <h3><span class="glyphicon glyphicon-th-list"></span> Movimiento de Rotaci&oacute;n</h3>
+        </div>
+        <div class="row">
+          
+          <div class="col-md-12">
+            <p>Todas las figuras describen el movimiento de rotaci&oacute;n sobre su propio eje y mientras giran alrededor de la tetera.</p>
+            <p>El eje sobrer el cual rotan es el eje Y y lo hacen a diferente velocidades.</p>
+            <pre class="prettyprint" >
+             
+
+              function render(){
+                //rotación del cubo
+                cube.rotation.y+=0.025; 
+
+                //rotacion de la sphera
+                sphere.rotation.y+=0.03;
+
+                //rotacion del toriode
+                toroide.rotation.y+=0.035;
+
+                //rotacion de la piramide
+                piramide.rotation.y+=0.040;
+              }
+            </pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="container" id="luces_1"><!--Toroide-->
+      
+        <div class="page-header">
+          <h3><span class="glyphicon glyphicon-th-list"></span> Creaci&oacute;n de Luces</h3>
+        </div>
+        <div class="row">
+          
+          <div class="col-md-12">
+            <p>Para la iluminaci&oacute;n de los objetos se utilizaron luces directas y una luz ambiental. </p>
+            <p>La luz ambiental se la crea con el objeto AmbientLight que proporciona la librer&iacute;a de THREE.js</p>
+            <p>Hay cuatro luces directas creadas por los objetos SpotLight de la librer&iacute;a. </p>
+            <pre class="prettyprint" >
+             
+            // add subtle ambient lighting
+            var ambientLight = new THREE.AmbientLight(0x0c0c0c);
+            scene.add(ambientLight);
+
+            // add spotlights for the shadows 
+            var spotLight1 = new THREE.SpotLight( 0xffffff );
+            spotLight1.position.set( -60, 150, 0 );
+            spotLight1.castShadow = true;
+            scene.add( spotLight1 );
+            var spotLight2 = new THREE.SpotLight( 0xE3E300 );
+            spotLight2.position.set( -30, 150, 0 );
+            spotLight2.castShadow = true;
+            scene.add( spotLight2 );
+            var spotLight3 = new THREE.SpotLight( 0xE30000 );
+            spotLight3.position.set( -0, 150, 0 );
+            spotLight3.castShadow = true;
+            scene.add( spotLight3 );
+            var spotLight4 = new THREE.SpotLight( 0xAA00E3 );
+            spotLight4.position.set( 30, 150, 0 );
+            spotLight4.castShadow = true;
+            scene.add( spotLight4 );
+              }
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div class="container" id="luces_2"><!--Toroide-->
+      
+        <div class="page-header">
+          <h3><span class="glyphicon glyphicon-th-list"></span> Encendido y Apagado de Luces</h3>
+        </div>
+        <div class="row">
+          
+          <div class="col-md-12">
+            <p>El manejo din&aacute;mico de las luces se maneja con la librer&iacute;a Dat-Gui.js.</p>
+            <p>S&oacute;lo las luces directas son manejadas de esta forma. Cada luz tiene su propio interruptor en el panel de manejo y su encendido y apagado se lo realiza desde la funci&oacute;n render. </p>
+            
+            <pre class="prettyprint" >
+             
+            //controles de la gui para las luces
+            var controls = new function() {
+                this.light1 = true;
+                this.light2 = true;
+                this.light3 = true;
+                this.light4 = true;
+            }
+
+            var gui = new DAT.GUI();
+            gui.add(controls,'light1');
+            gui.add(controls,'light2');
+            gui.add(controls,'light3');
+            gui.add(controls,'light4');
+
+            function render(){
+            //...
+            //encendido y apagado de las luces segun se escoja
+                if (!controls.light1) {scene.remove(spotLight1);} else{scene.add(spotLight1)};
+                if (!controls.light2) {scene.remove(spotLight2);} else{scene.add(spotLight2)};
+                if (!controls.light3) {scene.remove(spotLight3);} else{scene.add(spotLight3)};
+                if (!controls.light4) {scene.remove(spotLight4);} else{scene.add(spotLight4); };
+            //...
+          }
+            </pre>
+          </div>
+        </div>
+      </div>
+
+
           </div>
         </div>
       
@@ -839,6 +1014,7 @@
               }
         }
         
+
         function ocultar_pages(opt){
           if (opt==1) {//intro
             ocultar_cubo();
@@ -846,6 +1022,8 @@
             ocultar_esfera();
             ocultar_toroide();
             ocultar_recursos();
+            ocultar_luces();
+            ocultar_movimiento();
           };
           if (opt==2) {//cubo
             ocultar_intro();
@@ -853,6 +1031,8 @@
             ocultar_esfera();
             ocultar_toroide();
             ocultar_recursos();
+            ocultar_luces();
+            ocultar_movimiento();
           };
           if (opt==3) {//piramide
             ocultar_intro();
@@ -860,6 +1040,8 @@
             ocultar_esfera();
             ocultar_toroide();
             ocultar_recursos();
+            ocultar_luces();
+            ocultar_movimiento();
           };
           if (opt==4) {//esfera
             ocultar_intro();
@@ -867,6 +1049,8 @@
             ocultar_piramide();
             ocultar_toroide();
             ocultar_recursos();
+            ocultar_luces();
+            ocultar_movimiento();
           };
           if (opt==5) {//toroide
             ocultar_intro();
@@ -874,6 +1058,8 @@
             ocultar_piramide();
             ocultar_esfera();
             ocultar_recursos();
+            ocultar_luces();
+            ocultar_movimiento();
           };
           if (opt==6) {//recursos
             ocultar_intro();
@@ -881,7 +1067,28 @@
             ocultar_piramide();
             ocultar_esfera();
             ocultar_toroide();
+            ocultar_luces();
+            ocultar_movimiento();
           };
+          if (opt==7) {//Movimiento
+            ocultar_intro();
+            ocultar_cubo();
+            ocultar_piramide();
+            ocultar_esfera();
+            ocultar_toroide();
+            ocultar_recursos();
+            ocultar_luces();
+          };
+          if (opt==8) {//Luces
+            ocultar_intro();
+            ocultar_cubo();
+            ocultar_piramide();
+            ocultar_esfera();
+            ocultar_toroide();
+            ocultar_recursos();
+            ocultar_movimiento();
+          };
+
         }
         function ocultar_intro(){
           $("#introduccion_0").hide();
@@ -908,6 +1115,14 @@
           $("#toroide_1").hide();
           $("#toroide_2").hide();
         }
+        function ocultar_movimiento(){
+          $("#mov_1").hide();
+          $("#mov_2").hide();
+        }
+        function ocultar_luces(){
+          $("#luces_1").hide();
+          $("#luces_2").hide();
+        }
         function presentacion(){
           //$("#introduccion_0").hide();
           ocultar_intro();
@@ -916,6 +1131,8 @@
           ocultar_esfera();
           ocultar_toroide();
           ocultar_recursos();
+          ocultar_luces();
+          ocultar_movimiento();
           $("#introduccion_0").show("slow");
           $( "#intro_btn1" ).click(function() {
             $("#introduccion_0").show("slow");
@@ -978,6 +1195,27 @@
             $("#toroide_2").show("slow");
             $("#toroide_1").hide();
             ocultar_pages(5);
+          });
+
+          $( "#movimiento_btn1" ).click(function() {
+            $("#mov_1").show("slow");
+            $("#mov_2").hide();
+            ocultar_pages(7);
+          });
+          $( "#movimiento_btn2" ).click(function() {
+            $("#mov_2").show("slow");
+            $("#mov_1").hide();
+            ocultar_pages(7);
+          });
+          $( "#luces_btn1" ).click(function() {
+            $("#luces_1").show("slow");
+            $("#luces_2").hide();
+            ocultar_pages(8);
+          });
+          $( "#luces_btn2" ).click(function() {
+            $("#luces_2").show("slow");
+            $("#luces_1").hide();
+            ocultar_pages(8);
           });
 
           $( "#btn_recursos" ).click(function() {
