@@ -94,6 +94,17 @@
           </div>
         </li>
         <li>
+          <a href="#" data-toggle="collapse" data-target="#toggleDemot" data-parent="#sidenav01" class="collapsed">
+          <span class="glyphicon glyphicon-chevron-down"></span> Tetera <span class="caret pull-right"></span>
+          </a>
+          <div class="collapse" id="toggleDemot" style="height: 0px;">
+            <ul class="nav nav-list">
+              <li><a href="#" id="tetera_btn1">Creaci&oacute;n</a></li>
+             <!--<li><a href="#" id="cubo_btn2">Animaci&oacute;n</a></li>-->
+            </ul>
+          </div>
+        </li>
+        <li>
           <a href="#" data-toggle="collapse" data-target="#toggleDemo3" data-parent="#sidenav01" class="collapsed">
           <span class="glyphicon glyphicon-chevron-down"></span> Esfera <span class="caret pull-right"></span>
           </a>
@@ -436,6 +447,47 @@
         </div>
       </div>
 
+      <div class="container" id="tetera"><!--Tetera-->
+      
+        <div class="page-header">
+          <h3><span class="glyphicon glyphicon-th-list"></span> Tetera - Creaci&oacute;n</h3>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-md-4">
+            <div class="well">
+              <div id="tetera_opengl"></div>
+              <div class="caption">
+                <p class="text-center  text-primary"><strong>Tetera</strong></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <p>Para crear la tetera necesitamos de un archivo .js, en donde se econtraran los datos necesarios
+            para su creación. Usamos la clase de Three.js THREE.JSONLoader().</p>
+            <p>Una vez cargada la tetera procedemos a ubicarla en el plano.</p>
+            <pre class="prettyprint" >
+              //tetera
+              var loader = new THREE.JSONLoader();
+              var tetera;
+              loader.load( "Teapot.js", function(geometry){
+                var material = new THREE.MeshLambertMaterial({color: 0x55B663});
+                material.shading = THREE.FlatShading;
+                tetera = new THREE.Mesh(geometry, material);
+              });
+              loader.onLoadComplete=function(){
+                tetera.scale.set(5, 5, 5 );
+                tetera.position.x=0;
+                tetera.position.y=0;
+                tetera.position.z=0;
+
+                scene.add( tetera );
+                render_tetera();
+              }
+            </pre>
+          </div>
+        </div>
+      </div>
+
       <div class="container" id="esfera_1"><!--Piramide-->
       
         <div class="page-header">
@@ -764,6 +816,7 @@
           var scene_esfera = new THREE.Scene();
           var scene_piramide = new THREE.Scene();
           var scene_toroide = new THREE.Scene();
+          var scene_tetera = new THREE.Scene();
           // create a camera, which defines where we're looking at.
           var camera = new THREE.PerspectiveCamera(45, canvasWidth / canvasHeight, 0.1, 1000);
 
@@ -784,10 +837,15 @@
           renderer_t.setSize(canvasWidth, canvasHeight);
           renderer_t.shadowMapEnabled = true;
 
+          var renderer_te = new THREE.WebGLRenderer({ alpha: true });
+          renderer_te.setSize(canvasWidth, canvasHeight);
+          renderer_te.shadowMapEnabled = true;
+
           creacion_cubo(scene_cube,camera,renderer_c,opt_animation);
           creacion_esfera(scene_esfera,camera,renderer_e,opt_animation);
           creacion_piramide(scene_piramide,camera,renderer_p,opt_animation);
           creacion_toroide(scene_toroide,camera,renderer_t,opt_animation);
+          creacion_tetera(scene_tetera,camera,renderer_te,opt_animation)
         }
         function creacion_cubo(scene,camera,renderer,opt_animation){
           // create a cube
@@ -873,7 +931,7 @@
 
           // add the sphere to the scene
           var step=0;
-		  var tam=0;
+		      var tam=0;
           scene.add(sphere);
 
           if (opt_animation==0) {
@@ -886,12 +944,12 @@
           };
           function render_esfera_a(){
             step+=0.1;
-			tam+=0.025;
-			
-			sphere.geometry.radius = Math.abs(Math.sin(tam));
-			sphere.scale.x = Math.abs(Math.sin(tam));
-			sphere.scale.y = Math.abs(Math.sin(tam));
-			sphere.scale.z = Math.abs(Math.sin(tam));
+      			tam+=0.025;
+      			
+      			sphere.geometry.radius = Math.abs(Math.sin(tam));
+      			sphere.scale.x = Math.abs(Math.sin(tam));
+      			sphere.scale.y = Math.abs(Math.sin(tam));
+      			sphere.scale.z = Math.abs(Math.sin(tam));
 	
             sphere.position.x =0;
             sphere.position.y =4*Math.sin(step);
@@ -1013,6 +1071,43 @@
                 renderer.render(scene, camera);
               }
         }
+
+        function creacion_tetera(scene,camera,renderer,opt_animation){
+          var loader = new THREE.JSONLoader();
+          var tetera;
+              loader.load( "Teapot.js", function(geometry){
+                var material = new THREE.MeshLambertMaterial({color: 0x55B663});
+                //material.shading = THREE.FlatShading;
+                tetera = new THREE.Mesh(geometry, material);
+            });
+            loader.onLoadComplete=function(){
+                tetera.scale.set(5, 5, 5 );
+                tetera.position.x=0;
+                tetera.position.y=0;
+                tetera.position.z=0;
+                //tetera.rotation.x=-0.55*Math.PI;
+                scene.add( tetera );
+                if (opt_animation==0) {
+                  $("#tetera_opengl").append(renderer.domElement);
+                     render_tetera();
+                };
+                if (opt_animation==1) {
+                  $("#tetera_opengl_a").append(renderer.domElement);
+                  render_tetera_a();
+                };
+            }
+              function render_tetera_a(){
+                // Read more about requestAnimationFrame at http://www.paulirish.com/2011/requestanimationframe-for-smart-animating/;
+                tetera.rotation.y+=-0.01;
+                // Render the scene.
+                renderer.render(scene, camera);
+                requestAnimationFrame(render_tetera_a);
+              }
+              function render_tetera(){
+                renderer.render(scene, camera);
+                requestAnimationFrame(render_tetera);
+              }
+        }
         
 
         function ocultar_pages(opt){
@@ -1024,6 +1119,7 @@
             ocultar_recursos();
             ocultar_luces();
             ocultar_movimiento();
+            ocultar_tetera();
           };
           if (opt==2) {//cubo
             ocultar_intro();
@@ -1033,6 +1129,7 @@
             ocultar_recursos();
             ocultar_luces();
             ocultar_movimiento();
+            ocultar_tetera();
           };
           if (opt==3) {//piramide
             ocultar_intro();
@@ -1042,6 +1139,7 @@
             ocultar_recursos();
             ocultar_luces();
             ocultar_movimiento();
+            ocultar_tetera();
           };
           if (opt==4) {//esfera
             ocultar_intro();
@@ -1051,6 +1149,7 @@
             ocultar_recursos();
             ocultar_luces();
             ocultar_movimiento();
+            ocultar_tetera();
           };
           if (opt==5) {//toroide
             ocultar_intro();
@@ -1060,6 +1159,7 @@
             ocultar_recursos();
             ocultar_luces();
             ocultar_movimiento();
+            ocultar_tetera();
           };
           if (opt==6) {//recursos
             ocultar_intro();
@@ -1069,6 +1169,7 @@
             ocultar_toroide();
             ocultar_luces();
             ocultar_movimiento();
+            ocultar_tetera();
           };
           if (opt==7) {//Movimiento
             ocultar_intro();
@@ -1078,6 +1179,7 @@
             ocultar_toroide();
             ocultar_recursos();
             ocultar_luces();
+            ocultar_tetera();
           };
           if (opt==8) {//Luces
             ocultar_intro();
@@ -1087,6 +1189,17 @@
             ocultar_toroide();
             ocultar_recursos();
             ocultar_movimiento();
+            ocultar_tetera();
+          };
+          if (opt==9) {//Tetera
+            ocultar_intro();
+            ocultar_cubo();
+            ocultar_piramide();
+            ocultar_esfera();
+            ocultar_toroide();
+            ocultar_recursos();
+            ocultar_movimiento();
+            ocultar_luces();
           };
 
         }
@@ -1123,6 +1236,10 @@
           $("#luces_1").hide();
           $("#luces_2").hide();
         }
+        function ocultar_tetera(){
+          $("#tetera").hide();
+          $("#tetera").hide();
+        }
         function presentacion(){
           //$("#introduccion_0").hide();
           ocultar_intro();
@@ -1133,6 +1250,7 @@
           ocultar_recursos();
           ocultar_luces();
           ocultar_movimiento();
+          ocultar_tetera();
           $("#introduccion_0").show("slow");
           $( "#intro_btn1" ).click(function() {
             $("#introduccion_0").show("slow");
@@ -1227,6 +1345,10 @@
             $("#fuentes").show("slow");
             $("#recursos").hide();
             ocultar_pages(6);
+          });
+          $( "#tetera_btn1" ).click(function() {
+            $("#tetera").show("slow");
+            ocultar_pages(9);
           });
         }
       });
