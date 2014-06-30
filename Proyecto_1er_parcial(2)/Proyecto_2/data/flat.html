@@ -189,7 +189,7 @@
             $("#opengl_flat").append(renderer.domElement);
 			
 			//Para rotar con el mouse
-			var controlsRP = new THREE.OrbitControls( camera, renderer.domElement );
+			var controlsRP = new THREE.OrbitControls( camera, renderer.scene );
         
             //ángulo de moviemiento inicial de cada figura. 
             var stepcube=0.06;
