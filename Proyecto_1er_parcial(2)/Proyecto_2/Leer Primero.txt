@@ -1,0 +1,5 @@
+Para que el proyecto pueda ejecutarse debe levantarse un servidor, debido a que el modelo de la tetera requiere que se lea
+un archivo de forma local y el navegador por razones de seguridad no lo permite.
+
+Si se tiene instalado python se puede abrir la ventana de comando desde la carpeta donde se encuentra el index.html
+del proyecto y escibir la siguiente sentencia : python -m SimpleHTTPServer 8080
